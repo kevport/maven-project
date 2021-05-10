@@ -13,7 +13,7 @@
 
   <properties>
     <project.build.sourceEncoding>utf-8</project.build.sourceEncoding>
-    <project.reporting.outputEncoding>utf-8</project.reporting.outputEncoding>
+    <!-- <project.reporting.outputEncoding>utf-8</project.reporting.outputEncoding> -->
   </properties>
 
   <modules>
@@ -41,11 +41,12 @@
 
       <plugin>
         <artifactId>maven-release-plugin</artifactId>
+        <version>3.0.0-M4</version>
         <configuration>
           <autoVersionSubmodules>true</autoVersionSubmodules>
         </configuration>
       </plugin>
-
+<!--
       <plugin>
         <artifactId>maven-site-plugin</artifactId>
         <configuration>
@@ -82,6 +83,7 @@
           </reportPlugins>
         </configuration>
       </plugin>
+      -->
     </plugins>
 
     <pluginManagement>
@@ -144,7 +146,7 @@
         <plugin>
           <groupId>org.codehaus.mojo</groupId>
           <artifactId>findbugs-maven-plugin</artifactId>
-          <version>2.3.3</version>
+          <version>3.0.6-SNAPSHOT</version>
         </plugin>
 
         <plugin>
@@ -203,6 +205,14 @@
         <version>1.8.5</version>
         <scope>test</scope>
       </dependency>
+
+      <dependency>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-release-plugin</artifactId>
+        <version>3.0.0-M4</version>
+        <type>maven-plugin</type>
+      </dependency>
+
     </dependencies>
   </dependencyManagement>
 
