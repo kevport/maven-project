@@ -1,7 +1,6 @@
 package com.example;
 
 import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Test;
 
 import static org.hamcrest.CoreMatchers.is;
@@ -18,7 +17,6 @@ public class TestGreeter {
     greeter = new Greeter();
   }
 
-  @Ignore
   @Test
   public void greetShouldIncludeTheOneBeingGreeted() {
     String someone = "World";
@@ -26,7 +24,6 @@ public class TestGreeter {
     assertThat(greetResult, containsString(someone));
   }
 
-  @Ignore
   @Test
   public void greetShouldIncludeGreetingPhrase() {
     String someone = "World";
