@@ -14,6 +14,11 @@
   <properties>
     <project.build.sourceEncoding>utf-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>utf-8</project.reporting.outputEncoding>
+    <!--Sonar -->
+    <sonar.java.coveragePlugin>jacoco</sonar.java.coveragePlugin>
+    <sonar.dynamicAnalysis>reuseReports</sonar.dynamicAnalysis>
+    <sonar.jacoco.reportPath>${project.basedir}/../target/jacoco.exec</sonar.jacoco.reportPath>
+    <sonar.language>java</sonar.language>
   </properties>
 
   <modules>
@@ -30,7 +35,9 @@
   </distributionManagement>
 
   <build>
+
     <plugins>
+
       <plugin>
         <artifactId>maven-compiler-plugin</artifactId>
         <configuration>
@@ -44,6 +51,25 @@
         <version>3.0.0-M4</version>
         <configuration>
           <autoVersionSubmodules>true</autoVersionSubmodules>
+        </configuration>
+      </plugin>
+
+      <plugin>
+        <groupId>org.jacoco</groupId>
+        <artifactId>jacoco-maven-plugin</artifactId>
+        <version>0.8.5</version>
+        <executions>
+          <execution>
+            <goals>
+              <goal>prepare-agent</goal>
+              <goal>prepare-agent-integration</goal>
+              <goal>report</goal>
+              <goal>report-integration</goal>
+            </goals>
+          </execution>
+        </executions>
+        <configuration>
+          <destFile>${sonar.jacoco.reportPath}</destFile>
         </configuration>
       </plugin>
 
