@@ -20,6 +20,11 @@ pipeline {
                 }
             }
         }
+        stage('Dump ENV') {
+            steps {
+                sh "env"
+            }
+        }
         stage('Quality Gate') {
             steps {
                 waitForQualityGate abortPipeline: true
